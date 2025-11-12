@@ -1,9 +1,11 @@
 # STM32_Printf
-Using printf for serial debugging on STM32 MCUs
+Using printf/scanf for serial debugging on STM32 MCUs
 
-## How to use printf for serial console printing?
+## Installation
 
-Add this code to your UART initialization file (main.c or uart.c/h):
+### Step 1: Add the code to your project
+
+Add the following code to your UART initialization file (typically `main.c` or `uart.c`):
 
 ```c
 #ifdef __GNUC__
@@ -33,4 +35,16 @@ GETCHAR_PROTOTYPE
 }
 ```
 
-**Note:** Replace `huartX` with your actual UART handler (e.g., `huart1`, `huart2`, etc.)
+### Step 2: Configure the UART handler
+
+Replace `huartX` with your actual UART handler:
+- `huart1` for USART1
+- `huart2` for USART2
+
+### Step 3: Use printf in your code
+
+Now you can use `printf()` normally in your code:
+```c
+printf("System started successfully!\r\n");
+printf("Sensor value: %d\r\n", sensor_value);
+```
