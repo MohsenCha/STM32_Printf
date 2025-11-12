@@ -38,8 +38,7 @@ GETCHAR_PROTOTYPE
 ### Step 2: Configure the UART handler
 
 Replace `huartX` with your actual UART handler:
-- `huart1` for USART1
-- `huart2` for USART2
+- `huart1` for USART1, `huart2` for USART2, etc.
 
 ### Step 3: Use printf in your code
 
